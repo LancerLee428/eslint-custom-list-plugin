@@ -1,3 +1,4 @@
+const pluginConfig = require('./pluginConfig.ts');
 module.exports = {
   env: {
     browser: true,
@@ -16,14 +17,6 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'custom-lists'],
   rules: {
-    'custom-lists/custom-lists': [
-      'error',
-      {
-        npmWhiteList: ['ant-design', '.less', 'react'],
-        npmRegWhiteList: ['vue\\d'],
-        domainWhiteList: ['jianshu'],
-        domainRegWhiteList: ['baidu\\.\\w+'],
-      },
-    ],
+    'custom-lists/custom-lists': ['error', pluginConfig],
   },
 };
